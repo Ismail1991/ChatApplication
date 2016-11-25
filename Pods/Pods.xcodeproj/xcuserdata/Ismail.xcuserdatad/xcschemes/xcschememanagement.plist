@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>ActionCableClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Swift-ActionCableClient.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Starscream.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0F42ECB7DFFA08681077FE3FE1C2C8CA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20A7EE51E02C1161A53DB8E5C14326EF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>22BD2279EFCE295ABCF525E5162464C9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6AAFB67359D4071A901E493D4FA4BD41</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>93DE2EB2C1BE10C415E6438C4A3407AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
