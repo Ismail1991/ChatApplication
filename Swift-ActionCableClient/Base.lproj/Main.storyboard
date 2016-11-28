@@ -1,64 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iht-N8-OKr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="frx-wb-tmK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Login View Controller-->
+        <scene sceneID="gik-oS-4E1">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Swift_ActionCableClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="1ry-lG-Oz0" customClass="LoginViewController" customModule="Swift_ActionCableClient" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="vH9-Pp-UyG"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vdn-yE-GRd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="sxj-T6-DrP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wvY-5Z-Wse">
-                                <rect key="frame" x="139" y="243" width="97" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="Q1w-VI-cYG"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BME-Ve-EKd">
+                                <rect key="frame" x="28" y="280" width="319" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0P-s1-mtk">
-                                <rect key="frame" x="164" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f4R-2g-pCc">
+                                <rect key="frame" x="168" y="318" width="38" height="30"/>
+                                <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="sendMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nHW-I3-7nw"/>
+                                    <action selector="onClickLogin:" destination="1ry-lG-Oz0" eventType="touchUpInside" id="GOx-ae-adp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wvY-5Z-Wse" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-75.5" id="4YB-sr-SRN"/>
-                            <constraint firstItem="l0P-s1-mtk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="6UR-gW-vHs"/>
-                            <constraint firstItem="l0P-s1-mtk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="UcV-EP-hy3"/>
-                            <constraint firstItem="wvY-5Z-Wse" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerXWithinMargins" id="gjX-2r-B1R"/>
+                            <constraint firstItem="f4R-2g-pCc" firstAttribute="centerY" secondItem="sxj-T6-DrP" secondAttribute="centerY" id="1JO-3z-kNZ"/>
+                            <constraint firstItem="BME-Ve-EKd" firstAttribute="leading" secondItem="sxj-T6-DrP" secondAttribute="leading" constant="28" id="CBL-D7-USd"/>
+                            <constraint firstItem="BME-Ve-EKd" firstAttribute="centerX" secondItem="f4R-2g-pCc" secondAttribute="centerX" id="Fic-Gf-qbR"/>
+                            <constraint firstItem="f4R-2g-pCc" firstAttribute="top" secondItem="BME-Ve-EKd" secondAttribute="bottom" constant="8" id="ays-YU-Z97"/>
+                            <constraint firstItem="f4R-2g-pCc" firstAttribute="centerX" secondItem="sxj-T6-DrP" secondAttribute="centerX" id="u0r-6H-1R0"/>
+                            <constraint firstAttribute="trailing" secondItem="BME-Ve-EKd" secondAttribute="trailing" constant="28" id="xRq-Qs-RBK"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="itP-Ks-e1S"/>
                     <connections>
-                        <outlet property="textFiled" destination="wvY-5Z-Wse" id="m0c-b3-7tw"/>
+                        <outlet property="userNameLabel" destination="BME-Ve-EKd" id="aRX-qv-06S"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9D-wD-ovI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="175" y="775"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="MIx-Ct-0bO">
             <objects>
-                <viewController id="Iht-N8-OKr" customClass="ChatViewController" customModule="Swift_ActionCableClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Iht-N8-OKr" customClass="ChatViewController" customModule="Swift_ActionCableClient" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nNz-Cu-hrK"/>
                         <viewControllerLayoutGuide type="bottom" id="GzF-Vy-Sqj"/>
@@ -71,7 +70,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vN-NL-SVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="775"/>
+            <point key="canvasLocation" x="1010" y="775"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mjg-9v-67x">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="frx-wb-tmK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="08c-Hq-YfH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1ry-lG-Oz0" kind="relationship" relationship="rootViewController" id="tD7-KV-eQQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ArR-Wg-tGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-604" y="774.96251874062978"/>
         </scene>
     </scenes>
 </document>

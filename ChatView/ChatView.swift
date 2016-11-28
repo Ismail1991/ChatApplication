@@ -81,7 +81,6 @@ class ChatView : UIView {
     }
 }
 
-
 //MARK: Notifications
 extension ChatView {
     func keyboardWillHideNotification(_ notification: Notification) {
@@ -109,4 +108,3 @@ extension ChatView {
         }, completion: nil)
     }
 }
-

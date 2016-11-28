@@ -25,33 +25,22 @@ import UIKit
 class ChatCell: UITableViewCell {
     
     static var Inset:CGFloat = 25.0
+    static var width:CGFloat = 280
     
     let headerMsg = UILabel()
-    let textMsg = UILabel()
-    
-//    var message: ChatMessage? {
-//        didSet {
-////            self.textMsg.attributedText = message?.attributedString()
-////            self.textMsg.sizeToFit()
-//            self.headerMsg.text = message?.name
-//            self.headerMsg.sizeToFit()
-//            
-//            self.textMsg.text = message?.message
-//            self.textMsg.sizeToFit()
-//        }
-//    }
+    let textMsg = PaddingLabel()
     
     var message: ChatMessage?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        headerMsg.frame = CGRect(x: 10, y: 5, width: self.frame.width, height: 20)
         headerMsg.lineBreakMode = NSLineBreakMode.byWordWrapping
         headerMsg.numberOfLines = 1
         headerMsg.font = UIFont.boldSystemFont(ofSize: 10.0)
         
         textMsg.lineBreakMode = NSLineBreakMode.byWordWrapping
         textMsg.numberOfLines = 0
+        textMsg.font = UIFont.systemFont(ofSize: 13.0)
         
         self.addSubview(headerMsg)
         self.addSubview(textMsg)
@@ -80,20 +69,20 @@ class ChatCell: UITableViewCell {
             textMsg.snp.remakeConstraints({ (make) -> Void in
                 make.top.equalTo(ChatCell.Inset)
                 make.right.equalTo(-ChatCell.Inset)
-                make.width.equalTo(280)
-                make.bottom.equalTo(0)
+                make.width.equalTo(ChatCell.width)
+                make.bottom.equalTo(-10)
             })
             textMsg.customLabel(color: UIColor(red: 74/255, green: 160/255, blue: 154/255, alpha: 1), textColor: UIColor.white)
         } else {
-            self.headerMsg.text = message?.name
+            self.headerMsg.text = (message?.name)!+"@"
             self.textMsg.text = message?.message
             self.headerMsg.sizeToFit()
             self.textMsg.sizeToFit()
             headerMsg.textAlignment = .left
             textMsg.snp.remakeConstraints({ (make) -> Void in
                 make.top.left.equalTo(ChatCell.Inset)
-                make.width.equalTo(280)
-                make.bottom.equalTo(0)
+                make.width.equalTo(ChatCell.width)
+                make.bottom.equalTo(-10)
             })
             textMsg.customLabel(color: UIColor(red: 191/255, green: 191/255, blue: 191/255, alpha: 1), textColor: UIColor.black)
         }
@@ -106,5 +95,27 @@ extension UILabel {
         self.clipsToBounds = true
         self.backgroundColor = color
         self.textColor = textColor
+    }
+}
+
+class PaddingLabel: UILabel {
+    
+    @IBInspectable var topInset: CGFloat = 0.0
+    @IBInspectable var bottomInset: CGFloat = 0.0
+    @IBInspectable var leftInset: CGFloat = 10.0
+    @IBInspectable var rightInset: CGFloat = 10.0
+    
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        super.drawText(in: UIEdgeInsetsInsetRect(rect, insets))
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        get {
+            var contentSize = super.intrinsicContentSize
+            contentSize.height += topInset + bottomInset
+            contentSize.width += leftInset + rightInset
+            return contentSize
+        }
     }
 }

@@ -36,7 +36,7 @@ class ChatViewController: UIViewController {
     var channel: Channel?
     
     var history: Array<ChatMessage> = Array()
-    var name: String?
+    var userName: String?
     
     var chatView: ChatView?
     
@@ -51,7 +51,7 @@ class ChatViewController: UIViewController {
         view.addSubview(chatView!)
         
         chatView?.snp.remakeConstraints({ (make) -> Void in
-            make.top.equalTo(20)
+            make.top.equalTo(0)
             make.bottom.left.right.equalTo(self.view)
         })
         
@@ -60,31 +60,44 @@ class ChatViewController: UIViewController {
         chatView?.tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
         chatView?.tableView.allowsSelection = false
         chatView?.tableView.register(ChatCell.self, forCellReuseIdentifier: ChatViewController.MessageCellIdentifier)
-        chatView?.tableView.allowsSelection = false
         chatView?.tableView.separatorStyle = .none
         
         chatView?.textField.delegate = self
         
         setupClient()
+        
+        let leftItem = UIBarButtonItem(title: "Logout",
+                                       style: UIBarButtonItemStyle.plain,
+                                       target: self,
+                                       action: #selector(ChatViewController.Logout))
+        self.navigationItem.rightBarButtonItem = leftItem
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        let alert = UIAlertController(title: "Chat", message: "What's Your Name?", preferredStyle: UIAlertControllerStyle.alert)
-        
-        var nameTextField: UITextField?
-        alert.addTextField(configurationHandler: {(textField: UITextField!) in
-            textField.placeholder = "Name"
-            nameTextField = textField
-        })
-        
-        alert.addAction(UIAlertAction(title: "Start", style: UIAlertActionStyle.default) {(action: UIAlertAction) in
-            self.name = nameTextField?.text
+//        let alert = UIAlertController(title: "Chat", message: "What's Your Name?", preferredStyle: UIAlertControllerStyle.alert)
+//        
+//        var nameTextField: UITextField?
+//        alert.addTextField(configurationHandler: {(textField: UITextField!) in
+//            textField.placeholder = "Name"
+//            nameTextField = textField
+//        })
+//        
+//        alert.addAction(UIAlertAction(title: "Start", style: UIAlertActionStyle.default) {(action: UIAlertAction) in
+//            self.userName = nameTextField?.text
             self.chatView?.textField.becomeFirstResponder()
-        })
-        
-        self.present(alert, animated: true, completion: nil)
+            
+            let interface : JsonResponse = JsonResponse()
+            interface.delegate = self
+            interface.getResponse(url: "http://192.168.20.118:3005/messages/1/list.json")
+//        })
+//        
+//        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func Logout() {
+        self.navigationController?.popToRootViewController(animated: false)
     }
 }
 
@@ -122,12 +135,7 @@ extension ChatViewController {
             }
             
             let JSONObject = JSON(data!)
-//            let msg = ChatMessage(name: JSONObject["name"].string!, message: JSONObject["message"].string!)
-            
-            print(JSONObject)
-            
             let msg = ChatMessage(name: JSONObject["user"].string!, message: JSONObject["message"].string!)
-            
             
             self.history.append(msg)
             self.chatView?.tableView.reloadData()
@@ -135,8 +143,8 @@ extension ChatViewController {
             
             // Scroll to our new message!
 //            if (msg.name == self.name) {
-                let indexPath = IndexPath(row: self.history.count - 1, section: 0)
-                self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+            self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
 //            }
         }
         
@@ -158,7 +166,7 @@ extension ChatViewController {
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.httpMethod = "POST"
             
-            let username = self.name!
+            let username = self.userName!
             
             let parameters = ["message":["content":prettyMessage,"chatroom_id":"1"], "username":username] as [String : Any]
             
@@ -194,7 +202,6 @@ extension ChatViewController {
                     let jsonStr = String(data: data!, encoding: .utf8)
                     print("Error could not parse JSON: '\(jsonStr)'")
                 }
-                
             }
             task.resume()
         }
@@ -203,9 +210,18 @@ extension ChatViewController {
 
 //MARK: UITextFieldDelegate
 extension ChatViewController: UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        if self.history.count > 0 {
+            DispatchQueue.main.async() {
+                let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+                self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            }
+        }
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.sendMessage(textField.text!)
         textField.text = ""
+        textField.resignFirstResponder()
         return true
     }
 }
@@ -215,11 +231,8 @@ extension ChatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let message = history[(indexPath as NSIndexPath).row]
-        let attrString = message.attributedString()
-        let width = self.chatView?.tableView.bounds.size.width;
-        let rect = attrString.boundingRect(with: CGSize(width: width! - (ChatCell.Inset * 2.0), height: CGFloat.greatestFiniteMagnitude),
-            options: [.usesLineFragmentOrigin, .usesFontLeading], context:nil)
-        return rect.size.height + (ChatCell.Inset * 1.0)//2.0
+        let height = message.heightForView(width: ChatCell.width)
+        return height + (ChatCell.Inset * 2) //2.0
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -243,16 +256,28 @@ extension ChatViewController: UITableViewDataSource {
         return history.count
     }
     
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return ChatViewController.ChannelIdentifier
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChatViewController.MessageCellIdentifier, for: indexPath) as! ChatCell
         let msg = history[(indexPath as NSIndexPath).row]
         cell.message = msg
-        cell.chatCell(name: self.name!)        
+        cell.chatCell(name: self.userName!)        
         return cell
+    }
+}
+
+//MARK: interfaceDelegae method
+extension ChatViewController: interfaceDelegae {
+    func handleData(respData:NSArray) {
+        for index in stride(from: 0, to: respData.count, by: 1) {
+            let data = respData[index] as! NSDictionary
+            let msg = ChatMessage(name: data["username"]! as! String, message: data["content"]! as! String)
+            self.history.append(msg)
+        }
+        DispatchQueue.main.async() {
+            self.chatView?.tableView.reloadData()
+            let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+            self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
     }
 }
 
@@ -261,25 +286,14 @@ struct ChatMessage {
     var name: String
     var message: String
     
-//    func attributedString() -> NSAttributedString {
-//        let messageString: String = "\(self.name) \(self.message)"
-//        let nameRange = NSRange(location: 0, length: self.name.characters.count)
-//        let nonNameRange = NSRange(location: nameRange.length, length: messageString.characters.count - nameRange.length)
-//        
-//        let string: NSMutableAttributedString = NSMutableAttributedString(string: messageString)
-//        string.addAttribute(NSFontAttributeName,
-//            value: UIFont.boldSystemFont(ofSize: 18.0),
-//            range: nameRange)
-//        string.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 18.0), range: nonNameRange)
-//        return string
-//    }
-    
-    func attributedString() -> NSAttributedString {
-        let messageString: String = "\(self.message)"
-        let nameRange = NSRange(location: 0, length: self.message.characters.count)
+    func heightForView(width: CGFloat) -> CGFloat {
+        let label:UILabel = UILabel(frame: CGRect(x:0, y:0, width:width, height:CGFloat.greatestFiniteMagnitude))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        label.font = UIFont.systemFont(ofSize: 13.0)
+        label.text = message
         
-        let string: NSMutableAttributedString = NSMutableAttributedString(string: messageString)
-        string.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 16.0), range: nameRange)
-        return string
+        label.sizeToFit()
+        return label.frame.height
     }
 }
