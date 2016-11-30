@@ -16,6 +16,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        self.title = "Chat Application"
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,16 +28,14 @@ class LoginViewController: UIViewController {
     @IBAction func onClickLogin(_ sender: Any) {
         if userNameLabel.text == "" {
             return
-        }        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let destVC = storyboard.instantiateViewController(withIdentifier: "chatVC") as! ChatViewController
-//        destVC.userName = userNameLabel.text
-//        self.present(destVC, animated: false)
+        }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let destVC = storyboard.instantiateViewController(withIdentifier: "chatVC") as! ChatViewController
         destVC.userName = userNameLabel.text
         navigationController?.pushViewController(destVC, animated: false)
+        
+        userNameLabel.text = ""
     }
 
     /*

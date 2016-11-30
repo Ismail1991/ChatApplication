@@ -23,17 +23,17 @@
 		0C514A28D5E327854DE2898D /* Pods_Swift_ActionCableClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_ActionCableClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E6EF38AB34C23122DA94F91 /* Pods-Swift-ActionCableClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-ActionCableClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient.release.xcconfig"; sourceTree = "<group>"; };
 		3D5BECBDEE4082C6249D7EF9 /* Pods-Swift-ActionCableClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-ActionCableClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient.debug.xcconfig"; sourceTree = "<group>"; };
-		EC16F8151DE4810C00076AB7 /* Swift-ActionCableClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-ActionCableClient.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC16F8151DE4810C00076AB7 /* Exampl Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exampl Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC16F8181DE4810C00076AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC16F81D1DE4810C00076AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC16F81F1DE4810C00076AB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EC16F8221DE4810C00076AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC16F8241DE4810C00076AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EC88227C1DE84D870008E130 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonResponse.swift; path = ChatView/JsonResponse.swift; sourceTree = "<group>"; };
+		EC88227C1DE84D870008E130 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
 		ECF512A91DEC177000F83B71 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		ECFC9E2F1DE5A91700B47C81 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatCell.swift; path = ChatView/ChatCell.swift; sourceTree = "<group>"; };
-		ECFC9E301DE5A91700B47C81 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatView.swift; path = ChatView/ChatView.swift; sourceTree = "<group>"; };
-		ECFC9E331DE5A97300B47C81 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ChatView/ChatViewController.swift; sourceTree = "<group>"; };
+		ECFC9E2F1DE5A91700B47C81 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		ECFC9E301DE5A91700B47C81 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		ECFC9E331DE5A97300B47C81 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,10 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				ECF512AB1DEC177D00F83B71 /* ChatView */,
-				ECFC9E2F1DE5A91700B47C81 /* ChatCell.swift */,
-				ECFC9E301DE5A91700B47C81 /* ChatView.swift */,
-				ECFC9E331DE5A97300B47C81 /* ChatViewController.swift */,
-				EC88227C1DE84D870008E130 /* JsonResponse.swift */,
 				EC16F8171DE4810C00076AB7 /* Swift-ActionCableClient */,
 				EC16F8161DE4810C00076AB7 /* Products */,
 				BF875ABA4FC8C884487A40DE /* Pods */,
@@ -75,7 +71,7 @@
 		EC16F8161DE4810C00076AB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC16F8151DE4810C00076AB7 /* Swift-ActionCableClient.app */,
+				EC16F8151DE4810C00076AB7 /* Exampl Chat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				ECF512A91DEC177000F83B71 /* LoginViewController.swift */,
+				ECFC9E2F1DE5A91700B47C81 /* ChatCell.swift */,
+				ECFC9E301DE5A91700B47C81 /* ChatView.swift */,
+				ECFC9E331DE5A97300B47C81 /* ChatViewController.swift */,
+				EC88227C1DE84D870008E130 /* JsonResponse.swift */,
 			);
 			path = ChatView;
 			sourceTree = "<group>";
@@ -111,9 +111,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC16F8141DE4810C00076AB7 /* Swift-ActionCableClient */ = {
+		EC16F8141DE4810C00076AB7 /* Exampl Chat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC16F8271DE4810C00076AB7 /* Build configuration list for PBXNativeTarget "Swift-ActionCableClient" */;
+			buildConfigurationList = EC16F8271DE4810C00076AB7 /* Build configuration list for PBXNativeTarget "Exampl Chat" */;
 			buildPhases = (
 				8D92A87F128EBAB9EA1370C7 /* [CP] Check Pods Manifest.lock */,
 				EC16F8111DE4810C00076AB7 /* Sources */,
@@ -126,9 +126,9 @@
 			);
 			dependencies = (
 			);
-			name = "Swift-ActionCableClient";
+			name = "Exampl Chat";
 			productName = "Swift-ActionCableClient";
-			productReference = EC16F8151DE4810C00076AB7 /* Swift-ActionCableClient.app */;
+			productReference = EC16F8151DE4810C00076AB7 /* Exampl Chat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -148,7 +148,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EC16F8101DE4810C00076AB7 /* Build configuration list for PBXProject "Swift-ActionCableClient" */;
+			buildConfigurationList = EC16F8101DE4810C00076AB7 /* Build configuration list for PBXProject "Exampl Chat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -161,7 +161,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC16F8141DE4810C00076AB7 /* Swift-ActionCableClient */,
+				EC16F8141DE4810C00076AB7 /* Exampl Chat */,
 			);
 		};
 /* End PBXProject section */
@@ -281,6 +281,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -303,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,6 +331,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -346,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -358,12 +360,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D5BECBDEE4082C6249D7EF9 /* Pods-Swift-ActionCableClient.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JPMH6J33V8;
 				INFOPLIST_FILE = "Swift-ActionCableClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Swift-ActionCableClient";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Exampl-chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -374,12 +377,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2E6EF38AB34C23122DA94F91 /* Pods-Swift-ActionCableClient.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = JPMH6J33V8;
 				INFOPLIST_FILE = "Swift-ActionCableClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Swift-ActionCableClient";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Exampl-chat";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -389,7 +393,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC16F8101DE4810C00076AB7 /* Build configuration list for PBXProject "Swift-ActionCableClient" */ = {
+		EC16F8101DE4810C00076AB7 /* Build configuration list for PBXProject "Exampl Chat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC16F8251DE4810C00076AB7 /* Debug */,
@@ -398,7 +402,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC16F8271DE4810C00076AB7 /* Build configuration list for PBXNativeTarget "Swift-ActionCableClient" */ = {
+		EC16F8271DE4810C00076AB7 /* Build configuration list for PBXNativeTarget "Exampl Chat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EC16F8281DE4810C00076AB7 /* Debug */,

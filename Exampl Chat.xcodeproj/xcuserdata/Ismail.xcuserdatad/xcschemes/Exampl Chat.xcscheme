@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20A7EE51E02C1161A53DB8E5C14326EF"
-               BuildableName = "Pods_Swift_ActionCableClient.framework"
-               BlueprintName = "Pods-Swift-ActionCableClient"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               BlueprintIdentifier = "EC16F8141DE4810C00076AB7"
+               BuildableName = "Exampl Chat.app"
+               BlueprintName = "Exampl Chat"
+               ReferencedContainer = "container:Exampl Chat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,6 +29,15 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EC16F8141DE4810C00076AB7"
+            BuildableName = "Exampl Chat.app"
+            BlueprintName = "Exampl Chat"
+            ReferencedContainer = "container:Exampl Chat.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -42,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20A7EE51E02C1161A53DB8E5C14326EF"
-            BuildableName = "Pods_Swift_ActionCableClient.framework"
-            BlueprintName = "Pods-Swift-ActionCableClient"
-            ReferencedContainer = "container:Pods.xcodeproj">
+            BlueprintIdentifier = "EC16F8141DE4810C00076AB7"
+            BuildableName = "Exampl Chat.app"
+            BlueprintName = "Exampl Chat"
+            ReferencedContainer = "container:Exampl Chat.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -60,6 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "EC16F8141DE4810C00076AB7"
+            BuildableName = "Exampl Chat.app"
+            BlueprintName = "Exampl Chat"
+            ReferencedContainer = "container:Exampl Chat.xcodeproj">
+         </BuildableReference>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

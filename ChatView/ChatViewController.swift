@@ -30,8 +30,8 @@ class ChatViewController: UIViewController {
     static var MessageCellIdentifier = "MessageCell"
     static var ChannelIdentifier = "MessagesChannel"//ChatChannel
     static var ChannelAction = "talk"
-    
-    let client = ActionCableClient(url: URL(string:"ws://192.168.20.118:3005/cable")!)//"wss://actioncable-echo.herokuapp.com/cable"
+    //https://exampl-chat.herokuapp.com
+    let client = ActionCableClient(url: URL(string:"wss://exampl-chat.herokuapp.com/cable")!)//"wss://actioncable-echo.herokuapp.com/cable"//192.168.20.118:3005
     
     var channel: Channel?
     
@@ -45,7 +45,7 @@ class ChatViewController: UIViewController {
         
         self.title = "Chat"
         
-        client.origin = "http://192.168.20.118:3005"
+        client.origin = "https://exampl-chat.herokuapp.com"//http://192.168.20.118:3005
         
         chatView = ChatView(frame: view.bounds)//view.bounds//frame: CGRect(x: 0, y: 500, width: view.bounds.width, height: view.bounds.height-50)
         view.addSubview(chatView!)
@@ -71,6 +71,8 @@ class ChatViewController: UIViewController {
                                        target: self,
                                        action: #selector(ChatViewController.Logout))
         self.navigationItem.rightBarButtonItem = leftItem
+        
+        self.navigationItem.setHidesBackButton(true, animated:false)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -90,14 +92,14 @@ class ChatViewController: UIViewController {
             
             let interface : JsonResponse = JsonResponse()
             interface.delegate = self
-            interface.getResponse(url: "http://192.168.20.118:3005/messages/1/list.json")
+            interface.getResponse(url: "https://exampl-chat.herokuapp.com/messages/1/list.json")//http://192.168.20.118:3005/messages/1/list.json
 //        })
 //        
 //        self.present(alert, animated: true, completion: nil)
     }
     
     func Logout() {
-        self.navigationController?.popToRootViewController(animated: false)
+        _ = self.navigationController?.popToRootViewController(animated: false)
     }
 }
 
@@ -130,7 +132,7 @@ extension ChatViewController {
         
           self.channel?.onReceive = {(data: Any?, error: Error?) in
             if let _ = error {
-                print(error)
+                print(error ?? "instance is nil")
                 return
             }
             
@@ -160,7 +162,7 @@ extension ChatViewController {
 //           )
             
             
-            let url:NSURL = NSURL(string: "http://192.168.20.118:3005/messages.json")!
+            let url:NSURL = NSURL(string: "https://exampl-chat.herokuapp.com/messages.json")!
             let request:NSMutableURLRequest = NSMutableURLRequest(url: url as URL)
             
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -273,10 +275,13 @@ extension ChatViewController: interfaceDelegae {
             let msg = ChatMessage(name: data["username"]! as! String, message: data["content"]! as! String)
             self.history.append(msg)
         }
-        DispatchQueue.main.async() {
-            self.chatView?.tableView.reloadData()
-            let indexPath = IndexPath(row: self.history.count - 1, section: 0)
-            self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        
+        if self.history.count > 0 {
+            DispatchQueue.main.async() {
+                self.chatView?.tableView.reloadData()
+                let indexPath = IndexPath(row: self.history.count - 1, section: 0)
+                self.chatView?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+            }
         }
     }
 }
