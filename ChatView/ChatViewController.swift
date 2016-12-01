@@ -30,7 +30,7 @@ class ChatViewController: UIViewController {
     static var MessageCellIdentifier = "MessageCell"
     static var ChannelIdentifier = "MessagesChannel"//ChatChannel
     static var ChannelAction = "talk"
-    //https://exampl-chat.herokuapp.com
+
     let client = ActionCableClient(url: URL(string:"wss://exampl-chat.herokuapp.com/cable")!)//"wss://actioncable-echo.herokuapp.com/cable"//192.168.20.118:3005
     
     var channel: Channel?

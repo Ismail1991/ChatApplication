@@ -1,21 +1,28 @@
 PODS:
   - ActionCableClient (0.2.3):
     - Starscream (~> 2.0.0)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
   - SnapKit (3.0.2)
   - Starscream (2.0.2)
   - SwiftyJSON (3.1.3)
 
 DEPENDENCIES:
   - ActionCableClient
+  - Crashlytics
+  - Fabric
   - SnapKit (~> 3.0.2)
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   ActionCableClient: c8a466410d31bfa14e7a9c209b539c1e2d026a5f
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   Starscream: 6c135a34e0a6e60cedaa0b30db67a4c05cf7cd38
   SwiftyJSON: 38a8ea2006779c0fc4c310cb2ee8195327740faf
 
-PODFILE CHECKSUM: 374c976fdd307b1212a6cd3aceecf5967e5c1dd0
+PODFILE CHECKSUM: b21a1db89841ccc150549218a3d30d8290875b89
 
 COCOAPODS: 1.1.1

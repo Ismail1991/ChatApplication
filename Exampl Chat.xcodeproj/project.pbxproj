@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		508993BEBC41C5C9291D3FCB /* Pods_Swift_ActionCableClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C514A28D5E327854DE2898D /* Pods_Swift_ActionCableClient.framework */; };
+		37D54B20B6B11689578EE432 /* Pods_Exampl_Chat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B8A2DCAAB66A3D19B98C976 /* Pods_Exampl_Chat.framework */; };
 		EC16F8191DE4810C00076AB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC16F8181DE4810C00076AB7 /* AppDelegate.swift */; };
 		EC16F81E1DE4810C00076AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC16F81C1DE4810C00076AB7 /* Main.storyboard */; };
 		EC16F8201DE4810C00076AB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC16F81F1DE4810C00076AB7 /* Assets.xcassets */; };
@@ -20,9 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0C514A28D5E327854DE2898D /* Pods_Swift_ActionCableClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Swift_ActionCableClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E6EF38AB34C23122DA94F91 /* Pods-Swift-ActionCableClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-ActionCableClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient.release.xcconfig"; sourceTree = "<group>"; };
-		3D5BECBDEE4082C6249D7EF9 /* Pods-Swift-ActionCableClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Swift-ActionCableClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient.debug.xcconfig"; sourceTree = "<group>"; };
+		2B8A2DCAAB66A3D19B98C976 /* Pods_Exampl_Chat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Exampl_Chat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE019256603782753C997EF /* Pods-Exampl Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exampl Chat.release.xcconfig"; path = "Pods/Target Support Files/Pods-Exampl Chat/Pods-Exampl Chat.release.xcconfig"; sourceTree = "<group>"; };
 		EC16F8151DE4810C00076AB7 /* Exampl Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Exampl Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC16F8181DE4810C00076AB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC16F81D1DE4810C00076AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +29,7 @@
 		EC16F8221DE4810C00076AB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EC16F8241DE4810C00076AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC88227C1DE84D870008E130 /* JsonResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonResponse.swift; sourceTree = "<group>"; };
+		ECCD366031C4D7ADAD3693A9 /* Pods-Exampl Chat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Exampl Chat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Exampl Chat/Pods-Exampl Chat.debug.xcconfig"; sourceTree = "<group>"; };
 		ECF512A91DEC177000F83B71 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ECFC9E2F1DE5A91700B47C81 /* ChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		ECFC9E301DE5A91700B47C81 /* ChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				508993BEBC41C5C9291D3FCB /* Pods_Swift_ActionCableClient.framework in Frameworks */,
+				37D54B20B6B11689578EE432 /* Pods_Exampl_Chat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +51,8 @@
 		BF875ABA4FC8C884487A40DE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D5BECBDEE4082C6249D7EF9 /* Pods-Swift-ActionCableClient.debug.xcconfig */,
-				2E6EF38AB34C23122DA94F91 /* Pods-Swift-ActionCableClient.release.xcconfig */,
+				ECCD366031C4D7ADAD3693A9 /* Pods-Exampl Chat.debug.xcconfig */,
+				8EE019256603782753C997EF /* Pods-Exampl Chat.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -103,7 +103,7 @@
 		F4A465981B39654D4DB302FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0C514A28D5E327854DE2898D /* Pods_Swift_ActionCableClient.framework */,
+				2B8A2DCAAB66A3D19B98C976 /* Pods_Exampl_Chat.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -121,6 +121,7 @@
 				EC16F8131DE4810C00076AB7 /* Resources */,
 				6F4D6C501F9C62215B77710A /* [CP] Embed Pods Frameworks */,
 				031F7BBAB3F46C775FA9289F /* [CP] Copy Pods Resources */,
+				EC11B35C1DEF214B00537863 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -143,8 +144,7 @@
 				TargetAttributes = {
 					EC16F8141DE4810C00076AB7 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = JPMH6J33V8;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -192,7 +192,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Exampl Chat/Pods-Exampl Chat-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6F4D6C501F9C62215B77710A /* [CP] Embed Pods Frameworks */ = {
@@ -207,7 +207,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Swift-ActionCableClient/Pods-Swift-ActionCableClient-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Exampl Chat/Pods-Exampl Chat-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		8D92A87F128EBAB9EA1370C7 /* [CP] Check Pods Manifest.lock */ = {
@@ -224,6 +224,19 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
+		};
+		EC11B35C1DEF214B00537863 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5f0a9e00567d729d81b610be7642f23566f51d71 77e24580249f8f3e0bd658b6fc1f16ae19f56d124b9081cf44ed8b4fe02a6e8d";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -358,16 +371,19 @@
 		};
 		EC16F8281DE4810C00076AB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D5BECBDEE4082C6249D7EF9 /* Pods-Swift-ActionCableClient.debug.xcconfig */;
+			baseConfigurationReference = ECCD366031C4D7ADAD3693A9 /* Pods-Exampl Chat.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JPMH6J33V8;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Laxmaiah Peramalla (FTEN4G5793)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Swift-ActionCableClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Exampl-chat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.proarch.exampl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e8997cb0-b1ca-4f79-be6e-00962205386c";
+				PROVISIONING_PROFILE_SPECIFIER = "Exampl PA App_developmentCert";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -375,16 +391,19 @@
 		};
 		EC16F8291DE4810C00076AB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E6EF38AB34C23122DA94F91 /* Pods-Swift-ActionCableClient.release.xcconfig */;
+			baseConfigurationReference = 8EE019256603782753C997EF /* Pods-Exampl Chat.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JPMH6J33V8;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Laxmaiah Peramalla (FTEN4G5793)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Swift-ActionCableClient/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.proarch.Exampl-chat";
+				PRODUCT_BUNDLE_IDENTIFIER = com.proarch.exampl;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e8997cb0-b1ca-4f79-be6e-00962205386c";
+				PROVISIONING_PROFILE_SPECIFIER = "Exampl PA App_developmentCert";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
